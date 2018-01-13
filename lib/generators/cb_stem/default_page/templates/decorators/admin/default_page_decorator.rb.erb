@@ -1,0 +1,14 @@
+# Decorates <%= class_name %> for Active Admin
+class Admin::<%= class_name %>Decorator < ApplicationDecorator
+
+  decorates :<%= class_name.underscore %>
+
+  def title_with_link
+    link_to title, [:edit, :admin, object]
+  end
+
+  def body
+    object.body&.html_safe
+  end
+
+end

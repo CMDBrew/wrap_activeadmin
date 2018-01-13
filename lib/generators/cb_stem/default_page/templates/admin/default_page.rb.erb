@@ -1,0 +1,41 @@
+ActiveAdmin.register <%= class_name %> do
+  decorate_with Admin::<%= class_name %>Decorator
+
+  permit_params :title, :description,
+                seo_meta_config_attributes: %i[seo_title seo_description]
+
+  actions :all, except: %i[show]
+
+  # INDEX
+  filter :title
+  filter :seo_meta_config,
+         as: :select,
+         multiple: true,
+         include_blank: true,
+         collection: proc { SeoMetaConfig.all.map { |x| [x.seo_title, x.id] } }
+  filter :updated_at
+
+  index do
+    selectable_column
+    column 'Page Title', :title_with_link, sortable: 'title'
+    column 'SEO Tags' do |<%= class_name.underscore %>|
+      <%= class_name.underscore %>.seo_meta_config ? 'Customized' : 'Default'
+    end
+    column 'Last Update', :updated_at
+    actions
+  end
+
+  # FORM
+  form do |f|
+    f.inputs 'Basics' do
+      f.input :title, label: 'Page Title'
+      f.input :description, label: 'Page Description'
+    end
+    f.inputs 'SEO Tag',
+             for: [:seo_meta_config, <%= class_name.underscore %>.seo_meta_config || SeoMetaConfig.new] do |u|
+      u.input :seo_title, label: 'SEO tags title'
+      u.input :seo_description, label: 'SEO tags description'
+    end
+    actions
+  end
+end
