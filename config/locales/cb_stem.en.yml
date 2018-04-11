@@ -1,4 +1,10 @@
 en:
+  admin:
+    cb_stem:
+      content_configs:
+        content_config:
+          reference_key: 'Reference Key: %{key}'
+
   cb_stem:
     activerecord:
       attributes:
@@ -54,6 +60,9 @@ en:
     resource:
       sections: &shared_panels
         general: General
+      content_config:
+        actions:
+          view: Configure
       admin_user:
         sections:
           <<: *shared_panels

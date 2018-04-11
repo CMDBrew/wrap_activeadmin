@@ -7,7 +7,7 @@ module CbStem
     # Generates Tasks
     class TasksGenerator < Rails::Generators::Base
 
-      source_root File.expand_path('../templates', __FILE__)
+      source_root File.expand_path('templates', __dir__)
 
       def setup_directory
         empty_directory 'db/cb_stem/seeds'

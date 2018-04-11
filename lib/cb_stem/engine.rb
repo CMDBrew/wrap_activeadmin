@@ -73,6 +73,12 @@ module CbStem
       end
     end
 
+    config.to_prepare do
+      Dir.glob(Rails.root + 'app/decorators/**/*_decorator*.rb').each do |c|
+        require_dependency(c)
+      end
+    end
+
     initializer :cb_stem do
       if defined?(ActiveAdmin)
         ::ActiveAdmin.application.load_paths.unshift root.join('lib', 'cb_stem/admin').to_s

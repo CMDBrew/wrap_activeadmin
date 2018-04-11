@@ -1,0 +1,6 @@
+en:
+  activerecord:
+    models:
+      cb_stem/content_model_config:
+        one: Content Model
+        other: Content Models

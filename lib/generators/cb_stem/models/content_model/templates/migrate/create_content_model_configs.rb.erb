@@ -1,0 +1,11 @@
+class CreateContentModelConfigs < ActiveRecord::Migration[5.0]
+  def change
+    create_table :cb_stem_content_model_configs do |t|
+      t.string :name
+      t.string :reference_key
+      t.integer :position
+
+      t.timestamps
+    end
+  end
+end

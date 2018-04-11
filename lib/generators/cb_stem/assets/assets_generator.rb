@@ -5,7 +5,7 @@ module CbStem
     # Generates CSS && JavaScript Assets
     class AssetsGenerator < Rails::Generators::Base
 
-      source_root File.expand_path('../templates', __FILE__)
+      source_root File.expand_path('templates', __dir__)
 
       def copy
         template(

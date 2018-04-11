@@ -50,6 +50,7 @@
   }
 
   .card-header {
+    z-index: 11;
     display: flex;
     align-items: center;
     height: $navbar-height;

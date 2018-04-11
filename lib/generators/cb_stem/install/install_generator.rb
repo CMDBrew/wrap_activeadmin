@@ -11,7 +11,7 @@ module CbStem
       include ::CbStem::Generators::Helper
 
       desc 'Installs CbStem and generates the necessary migrations & overwrites'
-      source_root File.expand_path('../templates', __FILE__)
+      source_root File.expand_path('templates', __dir__)
 
       argument :name, type: :string, default: 'AdminUser'
       class_option :skip_activeadmin, type: :string, default: true, alias: :aa

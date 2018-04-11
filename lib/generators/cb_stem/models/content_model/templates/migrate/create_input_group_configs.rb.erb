@@ -1,0 +1,13 @@
+class CreateInputGroupConfigs < ActiveRecord::Migration[5.0]
+  def change
+    create_table :cb_stem_input_group_configs do |t|
+      t.references :cb_stem_content_config, index: { name: 'cb_stem_inpt_groups_on_content_id' }
+      t.integer :position
+      t.string :reference_key
+      t.string :name
+      t.boolean :multiple, default: false
+
+      t.timestamps
+    end
+  end
+end
