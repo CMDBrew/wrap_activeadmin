@@ -1,0 +1,19 @@
+.ui-sortable-handle {
+  cursor: grab;
+}
+
+.ui-sortable-helper {
+  background: $card-bg;
+  border: 1px solid $input-focus-border-color;
+  transform-origin: center left;
+  @include box-shadow($input-focus-box-shadow);
+}
+
+.ui-sortable-placeholder {
+  z-index: 11;
+  background: theme-color-level('primary', $alert-bg-level);
+  border: 1px dashed $primary !important;
+  border-radius: $border-radius;
+  visibility: visible !important;
+  @include box-shadow(none !important);
+}

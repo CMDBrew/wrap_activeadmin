@@ -41,22 +41,6 @@
       margin-bottom: $spacer;
       overflow: hidden;
 
-      &.ui-sortable-placeholder {
-        z-index: 11;
-        background: theme-color-level('primary', $alert-bg-level);
-        border: 1px dashed $primary;
-        border-radius: $border-radius;
-        visibility: visible !important;
-        @include box-shadow(none);
-      }
-
-      &.ui-sortable-helper {
-        background: $card-bg;
-        border: 1px solid $input-focus-border-color;
-        transform-origin: center left;
-        @include box-shadow($input-focus-box-shadow);
-      }
-
       .columns > ol,
       & > ol {
         @extend .row;
@@ -111,5 +95,4 @@
       }
     }
   }
-
 }

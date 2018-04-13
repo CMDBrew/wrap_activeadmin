@@ -43,6 +43,7 @@ onDOMReady = ->
   $('[data-js="line-chart"]').aaLineChart()
   $('[data-js="bar-chart"]').aaBarChart()
   $('[data-js="doughnut-chart"]').aaDoughnutChart()
+  $('[data-js="sortable"]').aaSortable()
 
 $(document)
   .ready(onDOMReady)
@@ -56,3 +57,4 @@ $(document)
     fieldset.find('.form-control-file').aaFileInput()
     fieldset.find('[data-js="form-trigger"]').aaFormTrigger()
     fieldset.find('[data-toggle="tooltip"]').tooltip()
+    fieldset.find('[data-js="sortable"]').aaSortable()

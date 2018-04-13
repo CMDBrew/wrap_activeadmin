@@ -40,7 +40,6 @@ module ActiveAdmin
       end
 
       def close_link
-        return unless site_title_link?
         div title: I18n.t('active_admin.header_close'),
             'data-toggle': 'tooltip', 'data-placement': 'bottom' do
           a(i('', class: 'nc-icon nc-move-left'),

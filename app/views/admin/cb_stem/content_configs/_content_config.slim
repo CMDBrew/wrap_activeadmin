@@ -1,6 +1,13 @@
-.card.mb-3.body-p-0[id=dom_id(content_config)]
-  .card-header.d-block
-    h5.mb-0= content_config.name
-    p.text-secondary
-      small= t('.reference_key', key: content_config.reference_key)
-  .card-body
+.card.mb-3.body-p-0.content-config[id=dom_id(content_config) class='sortable-item']
+  .d-flex.flex-row
+    .handle.col-auto.p-0.border-right.d-flex.justify-content-center.align-items-center
+      small[class='sortable-index']
+        = content_config.position
+    .context.col.p-0
+      .card-header.d-block
+        h5.mb-0
+          = content_config.name
+        p.text-secondary
+          small
+            = t('.reference_key', key: content_config.reference_key)
+      .card-body

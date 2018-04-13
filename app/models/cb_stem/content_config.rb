@@ -2,6 +2,8 @@ module CbStem
 
   class ContentConfig < ApplicationRecord
 
+    acts_as_list scope: %i[cb_stem_content_model_config_id]
+
     include CbStem::NameGenerator
     include CbStem::IdentifierGenerator
     assign_name       :name,
