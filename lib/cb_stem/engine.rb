@@ -11,6 +11,8 @@ require 'carrierwave'
 require 'tinymce-rails'
 require 'select2-rails'
 require 'chart-js-rails'
+require 'jquery-rails'
+require 'jquery-ui-rails'
 # Countries
 require 'flag-icons-rails'
 require 'carmen-rails'

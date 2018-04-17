@@ -1,10 +1,6 @@
 #= require jquery3
-#= require jquery-ui/widgets/datepicker
-#= require jquery-ui/widgets/dialog
-#= require jquery-ui/widgets/sortable
-#= require jquery-ui/widgets/tabs
-#= require jquery-ui/widget
 #= require jquery_ujs
+#= require jquery-ui
 #= require jquery.minicolors
 #= require popper
 #= require bootstrap
@@ -44,6 +40,7 @@ onDOMReady = ->
   $('[data-js="bar-chart"]').aaBarChart()
   $('[data-js="doughnut-chart"]').aaDoughnutChart()
   $('[data-js="sortable"]').aaSortable()
+  $('[data-js="content-model-constructor"]').aaContentModelConstructor()
 
 $(document)
   .ready(onDOMReady)
@@ -58,3 +55,4 @@ $(document)
     fieldset.find('[data-js="form-trigger"]').aaFormTrigger()
     fieldset.find('[data-toggle="tooltip"]').tooltip()
     fieldset.find('[data-js="sortable"]').aaSortable()
+    fieldset.find('[data-js="content-model-constructor"]').aaContentModelConstructor()

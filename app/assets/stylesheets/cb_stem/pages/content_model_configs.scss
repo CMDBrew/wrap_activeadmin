@@ -4,7 +4,19 @@
 
     .handle {
       width: 32px;
+      padding: $spacer * 1.5 0;
       background: $body-bg;
     }
+  }
+
+  .input-type-item {
+    &.ui-draggable-dragging {
+      width: calc(#{$sidebar-width} - 2 * #{$card-spacer-x});
+    }
+  }
+
+  .input-group-configs {
+    border: 1px dashed $hr-border-color;
+    border-radius: $border-radius;
   }
 }

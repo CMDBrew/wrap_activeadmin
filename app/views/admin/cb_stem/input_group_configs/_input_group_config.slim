@@ -1,0 +1,12 @@
+.card[id=dom_id(input_group_config) class='input-group-config']
+  .d-flex.flex-row
+    .handle.col-auto.border-right.d-flex.justify-content-center
+      small[class='sortable-index']
+        = input_group_config.position
+    .context.col.p-0
+      .card-header.d-block
+        h5.mb-0
+          = input_group_config.name
+        p.text-secondary
+          small
+            = t('.reference_key', key: input_group_config.reference_key)

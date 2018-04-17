@@ -47,20 +47,26 @@ if CbStem.enable_content_model
 
     # SHOW
     sidebar '', only: :show, class: 'transparent' do
-      CbStem::InputConfig.input_types.keys.each do |key|
-        config = CbStem::InputConfig.icon_mapping.dig(key.to_sym)
-        next if config.blank?
-        div class: 'card table-item-identifier p-1 mb-2' do
-          div class: "thumbnail-icon #{config[:color]} mr-2" do
-            content_tag(:i, '', class: "nc-icon text-white nc-#{config[:icon]}")
+      div 'data-js': 'content-model-constructor',
+          'data-droppable-target': '.input-type-item-droppable' do
+        CbStem::InputConfig.input_types.keys.each do |key|
+          config = CbStem::InputConfig.icon_mapping.dig(key.to_sym)
+          next if config.blank?
+          div class: 'card table-item-identifier p-1 mb-2 input-type-item' do
+            div class: "thumbnail-icon #{config[:color]} mr-2" do
+              content_tag(:i, '', class: "nc-icon text-white nc-#{config[:icon]}")
+            end
+            span key
           end
-          span key
         end
       end
     end
 
     show do
-      div id: 'content_configs', 'data-js': 'sortable', 'data-sortable-handle': '.handle' do
+      div id: 'content_configs',
+          'data-js': 'sortable',
+          'data-sortable-handle': '.handle',
+          'data-sortable-item': '.content-config' do
         render resource.content_configs
       end
       text_node(
